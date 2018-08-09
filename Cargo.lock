@@ -1,0 +1,4 @@
+[[package]]
+name = "fizzbuzz-rs"
+version = "0.1.0"
+
