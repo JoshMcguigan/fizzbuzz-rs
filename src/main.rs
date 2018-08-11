@@ -11,6 +11,7 @@
 // "learn rust via fizz buzz"
 
 mod func;
+mod flexible;
 
 fn main() {
 
