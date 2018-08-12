@@ -17,8 +17,22 @@ impl From<usize> for FizzBuzz {
     }
 }
 
-fn main() {
-    for i in 1..=100 {
-        println!("{:?}", FizzBuzz::from(i));
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn from(){
+        for i in 1..=100 {
+            println!("{:?}", FizzBuzz::from(i));
+        }
+    }
+
+    #[test]
+    fn into(){
+        for i in 1..=100 {
+            let fizzbuzz : FizzBuzz = i.into();
+            println!("{:?}", fizzbuzz);
+        }
     }
 }

@@ -16,8 +16,14 @@ impl Display for FizzBuzz {
     }
 }
 
-fn main() {
-    for i in 1usize..=100usize {
-        println!("{}", FizzBuzz(i));
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn it_works(){
+        for i in 1usize..=100usize {
+            println!("{}", FizzBuzz(i));
+        }
     }
 }

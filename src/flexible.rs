@@ -3,12 +3,15 @@ fn fizzbuzz<'a, T>(nums: T)
     where T: IntoIterator<Item = &'a usize>
 {
     for num in nums {
-        match (num % 3 == 0, num % 5 == 0) {
-            (false, false) => println!("{}", num),
+        let divisible_by_three = num % 3 == 0;
+        let divisible_by_five = num % 5 == 0;
+
+        match (divisible_by_three, divisible_by_five) {
+            (true, true) => println!("FizzBuzz"),
             (true, false) => println!("Fizz"),
             (false, true) => println!("Buzz"),
-            (true, true) => println!("FizzBuzz"),
-        };
+            (false, false) => println!("{}", num),
+        }
     }
 }
 

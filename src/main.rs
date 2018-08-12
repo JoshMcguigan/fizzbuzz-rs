@@ -12,6 +12,9 @@
 
 mod func;
 mod flexible;
+mod display;
+mod intro;
+mod enumeration;
 
 fn main() {
 
