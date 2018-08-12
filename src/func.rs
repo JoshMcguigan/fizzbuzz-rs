@@ -1,11 +1,11 @@
-struct FizzBuzz<FnFizz, FnBuzz, FnFizzBuzz, FnOther> {
+struct FizzBuzzer<FnFizz, FnBuzz, FnFizzBuzz, FnOther> {
     fn_fizz: FnFizz,
     fn_buzz: FnBuzz,
     fn_fizzbuzz: FnFizzBuzz,
     fn_other: FnOther,
 }
 
-impl<FnFizz, FnBuzz, FnFizzBuzz, FnOther> FizzBuzz<FnFizz, FnBuzz, FnFizzBuzz, FnOther>
+impl<FnFizz, FnBuzz, FnFizzBuzz, FnOther> FizzBuzzer<FnFizz, FnBuzz, FnFizzBuzz, FnOther>
     where
         FnFizz: Fn(),
         FnBuzz: Fn(),
@@ -32,7 +32,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let fizzbuzzer = FizzBuzz::new(
+        let fizzbuzzer = FizzBuzzer::new(
             || println!("Fizz"),
             || println!("Buzz"),
             || println!("FizzBuzz"),

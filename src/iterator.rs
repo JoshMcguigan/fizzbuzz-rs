@@ -1,18 +1,16 @@
-
-
-struct FizzBuzz {
+struct FizzBuzzer {
     next: usize,
     max: usize,
 }
 
-impl FizzBuzz {
+impl FizzBuzzer {
     fn new(min: usize, length: usize) -> Self {
         let max = if length > 0 { min + length - 1 } else { 0 }; // protect from underflow
-        FizzBuzz { next: min, max }
+        FizzBuzzer { next: min, max }
     }
 }
 
-impl Iterator for FizzBuzz {
+impl Iterator for FizzBuzzer {
     type Item = String;
 
     fn next(&mut self) -> Option<String> {
@@ -31,8 +29,15 @@ impl Iterator for FizzBuzz {
     }
 }
 
-fn main() {
-    for text in FizzBuzz::new(1,100) {
-        println!("{}", text);
+#[cfg(test)]
+mod tests {
+
+    use super::*;
+
+    #[test]
+    fn it_works() {
+        for text in FizzBuzzer::new(1, 100) {
+            println!("{}", text);
+        }
     }
 }

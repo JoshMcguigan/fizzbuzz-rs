@@ -15,6 +15,7 @@ mod flexible;
 mod display;
 mod intro;
 mod enumeration;
+mod iterator;
 
 fn main() {
 
