@@ -4,9 +4,9 @@ struct FizzBuzzer {
 }
 
 impl FizzBuzzer {
-    fn new(min: usize, length: usize) -> Self {
-        let max = if length > 0 { min + length - 1 } else { 0 }; // protect from underflow
-        FizzBuzzer { next: min, max }
+    fn new(starting_value: usize, length: usize) -> Self {
+        let max = if length > 0 { starting_value + length - 1 } else { 0 }; // protect from underflow
+        FizzBuzzer { next: starting_value, max }
     }
 }
 
