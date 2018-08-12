@@ -10,6 +10,8 @@
 // "six(?) ways to fizz buzz with rust"
 // "learn rust via fizz buzz"
 
+extern crate core;
+
 mod func;
 mod flexible;
 mod display;

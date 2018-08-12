@@ -1,3 +1,7 @@
+use std::fmt::Display;
+use std::fmt::Formatter;
+use core::fmt;
+
 #[derive(Debug)]
 enum FizzBuzz {
     Fizz,
@@ -13,6 +17,15 @@ impl From<usize> for FizzBuzz {
             (true, false) => FizzBuzz::Fizz,
             (false, true) => FizzBuzz::Buzz,
             (true, true) => FizzBuzz::FizzBuzz,
+        }
+    }
+}
+
+impl Display for FizzBuzz {
+    fn fmt(&self, f: &mut Formatter) -> fmt::Result {
+        match self {
+            FizzBuzz::Other(n) => write!(f, "{}", n),
+            _ => write!(f, "{:?}", self),
         }
     }
 }
@@ -33,6 +46,13 @@ mod tests {
         for i in 1..=100 {
             let fizzbuzz : FizzBuzz = i.into();
             println!("{:?}", fizzbuzz);
+        }
+    }
+
+    #[test]
+    fn display() {
+        for i in 1..=100 {
+            println!("{}", FizzBuzz::from(i));
         }
     }
 }
