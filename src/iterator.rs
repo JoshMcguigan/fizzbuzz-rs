@@ -13,7 +13,7 @@ impl FizzBuzzer {
 impl Iterator for FizzBuzzer {
     type Item = String;
 
-    fn next(&mut self) -> Option<String> {
+    fn next(&mut self) -> Option<Self::Item> {
         if self.next > self.max { return None }
 
         let s = match (self.next % 3 == 0, self.next % 5 == 0) {
