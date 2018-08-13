@@ -1,5 +1,6 @@
 # fizzbuzz-rs
 
+Used as a test-bed for [this blog post](https://www.joshmcguigan.com/blog/fizzbuzz-tour-of-traits-rust/).
 
 ## License
 
