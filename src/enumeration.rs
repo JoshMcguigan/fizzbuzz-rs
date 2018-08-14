@@ -7,11 +7,11 @@ enum FizzBuzz {
     Fizz,
     Buzz,
     FizzBuzz,
-    Other(usize),
+    Other(u32),
 }
 
-impl From<usize> for FizzBuzz {
-    fn from(item: usize) -> Self {
+impl From<u32> for FizzBuzz {
+    fn from(item: u32) -> Self {
         match (item % 3 == 0, item % 5 == 0) {
             (false, false) => FizzBuzz::Other(item),
             (true, false) => FizzBuzz::Fizz,

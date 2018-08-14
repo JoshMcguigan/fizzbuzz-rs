@@ -1,6 +1,6 @@
 
 fn fizzbuzz<'a, T>(nums: T)
-    where T: IntoIterator<Item = &'a usize>
+    where T: IntoIterator<Item = &'a u32>
 {
     for num in nums {
         let divisible_by_three = num % 3 == 0;
@@ -15,7 +15,7 @@ fn fizzbuzz<'a, T>(nums: T)
     }
 }
 
-fn fizzbuzz_vec(nums: &Vec<usize>) {
+fn fizzbuzz_vec(nums: &Vec<u32>) {
     for num in nums {
         let divisible_by_three = num % 3 == 0;
         let divisible_by_five = num % 5 == 0;
@@ -35,13 +35,13 @@ mod tests {
 
     #[test]
     fn it_works(){
-        let nums : Vec<usize> = vec![1,2,3,4,5,15];
+        let nums : Vec<u32> = vec![1,2,3,4,5,15];
         fizzbuzz_vec(&nums);
 
-        let nums : Vec<usize> = vec![1,2,3,4,5,15];
+        let nums : Vec<u32> = vec![1,2,3,4,5,15];
         fizzbuzz(&nums);
 
-        let nums: [usize; 6] = [1,2,3,4,5,15];
+        let nums: [u32; 6] = [1,2,3,4,5,15];
         fizzbuzz(&nums);
     }
 }

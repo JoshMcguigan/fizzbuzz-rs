@@ -1,10 +1,10 @@
 struct FizzBuzzer {
-    next: usize,
-    max: usize,
+    next: u32,
+    max: u32,
 }
 
 impl FizzBuzzer {
-    fn new(starting_value: usize, length: usize) -> Self {
+    fn new(starting_value: u32, length: u32) -> Self {
         let max = if length > 0 { starting_value + length - 1 } else { 0 }; // protect from underflow
         FizzBuzzer { next: starting_value, max }
     }

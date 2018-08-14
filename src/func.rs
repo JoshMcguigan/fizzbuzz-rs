@@ -10,13 +10,13 @@ impl<FnFizz, FnBuzz, FnFizzBuzz, FnOther> FizzBuzzer<FnFizz, FnBuzz, FnFizzBuzz,
         FnFizz: Fn(),
         FnBuzz: Fn(),
         FnFizzBuzz: Fn(),
-        FnOther: Fn(usize),
+        FnOther: Fn(u32),
 {
     fn new(fn_fizz: FnFizz, fn_buzz: FnBuzz, fn_fizzbuzz: FnFizzBuzz, fn_other: FnOther) -> Self {
         Self { fn_fizz, fn_buzz, fn_fizzbuzz, fn_other }
     }
 
-    fn eval(&self, num: usize) {
+    fn eval(&self, num: u32) {
         match (num % 3 == 0, num % 5 == 0) {
             (false, false) => (self.fn_other)(num),
             (true, false) => (self.fn_fizz)(),
